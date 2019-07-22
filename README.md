@@ -35,7 +35,7 @@ define('C_REST_WEB_HOOK_URL','https://xxx.bitrix24.ru/rest/1/douasdqdsxSWgc3mgc1
 Вставьте текст примера в файл index.php:
 
 ```php
-require_once('crest.php');
+require_once('src/crest.php');
 
 // put an example below
 echo '<PRE>';
@@ -61,7 +61,7 @@ echo '</PRE>';
 Вставьте текст примера в файл index.php:
 
 ```php
-require_once('crest.php');
+require_once('src/crest.php');
 
 // put an example below
 echo '<PRE>';
@@ -83,7 +83,7 @@ echo '</PRE>';
 Укажите значения параметров client_id и client_secret для авторизации OAuth 2.0 в define C_REST_CLIENT_ID и C_REST_CLIENT_SECRET в файле settings.php, взяв эти значения из карточки локального приложения.
 
 ```php
-require_once('crest.php');
+require_once('src/crest.php');
 
 // put an example below
 echo '<PRE>';
@@ -110,7 +110,7 @@ echo '</PRE>';
 Вставьте текст примера в файл index.php
 
 ```php
-require_once('crest.php');
+require_once('src/crest.php');
 
 // put an example below
 echo '<PRE>';
@@ -132,7 +132,7 @@ echo '</PRE>';
 Укажите значения параметров client_id и client_secret для авторизации OAuth 2.0 в define C_REST_CLIENT_ID и C_REST_CLIENT_SECRET в файле settings.php.
 
 ```php
-require_once('crest.php');
+require_once('src/crest.php');
 
 // put an example below
 echo '<PRE>';
