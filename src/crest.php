@@ -2,7 +2,7 @@
 	require_once (__DIR__.'/settings.php');
 
 	/**
-	 *  @version 1.3
+	 *  @version 1.31
 	 *  define:
 	 *      C_REST_WEB_HOOK_URL = 'https://rest-api.bitrix24.com/rest/1/doutwqkjxgc3mgc1/'  //url on creat Webhook
 	 *      or
@@ -83,7 +83,7 @@
 			$arSettings = static::getAppSettings();
 			if($arSettings !== false)
 			{
-				if($arParams[ 'this_auth' ] == 'Y')
+				if(isset($arParams[ 'this_auth' ]) && $arParams[ 'this_auth' ] == 'Y')
 				{
 					$url = 'https://oauth.bitrix.info/oauth/token/';
 				}
@@ -123,7 +123,7 @@
 					{
 						$info[ 'curl_error' ] = curl_error($obCurl);
 					}
-					if($arParams[ 'this_auth' ] != 'Y' && static::TYPE_TRANSPORT == 'xml')//auth only json support
+					if(static::TYPE_TRANSPORT == 'xml' && (!isset($arParams[ 'this_auth' ]) || $arParams[ 'this_auth' ] != 'Y'))//auth only json support
 					{
 						$result = $out;
 					}
