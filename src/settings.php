@@ -1,4 +1,4 @@
-<?
+<?php
 //define('C_REST_CLIENT_ID','local.5c8bb1b0891cf2.87252039');//Application ID
 //define('C_REST_CLIENT_SECRET','SakeVG5mbRdcQet45UUrt6q72AMTo7fkwXSO7Y5LYFYNCRsA6f');//Application key
 // or
