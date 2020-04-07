@@ -2,7 +2,7 @@
 	require_once (__DIR__.'/settings.php');
 
 	/**
-	 *  @version 1.32
+	 *  @version 1.33
 	 *  define:
 	 *      C_REST_WEB_HOOK_URL = 'https://rest-api.bitrix24.com/rest/1/doutwqkjxgc3mgc1/'  //url on creat Webhook
 	 *      or
@@ -251,7 +251,7 @@
 					if(!empty($data[ 'method' ]))
 					{
 						$i++;
-						if(static::BATCH_COUNT > $i)
+						if(static::BATCH_COUNT >= $i)
 						{
 							$arDataRest[ 'cmd' ][ $key ] = $data[ 'method' ];
 							if(!empty($data[ 'params' ]))
