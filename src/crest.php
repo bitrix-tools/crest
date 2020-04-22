@@ -97,6 +97,11 @@
 				}
 
 				$sPostFields = http_build_query($arParams[ 'params' ]);
+				if($arSettings[ 'is_web_hook' ] == 'Y')
+				{
+					$url =$url.'?'.$sPostFields;
+					$sPostFields=false;
+				}
 
 				try
 				{
