@@ -1,6 +1,7 @@
 {
     "name": "bitrix-tools/crest",
     "description": "",
+    "version": "1.0",
     "autoload": {
         "classmap": ["src"],
         "files": ["src/settings.php"]
