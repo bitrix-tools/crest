@@ -2,7 +2,7 @@
 	require_once (__DIR__.'/settings.php');
 
 	/**
-	 *  @version 1.33
+	 *  @version 1.34
 	 *  define:
 	 *      C_REST_WEB_HOOK_URL = 'https://rest-api.bitrix24.com/rest/1/doutwqkjxgc3mgc1/'  //url on creat Webhook
 	 *      or
@@ -103,6 +103,7 @@
 					$obCurl = curl_init();
 					curl_setopt($obCurl, CURLOPT_URL, $url);
 					curl_setopt($obCurl, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($obCurl, CURLOPT_POSTREDIR, 10);
 					if($sPostFields)
 					{
 						curl_setopt($obCurl, CURLOPT_POST, true);
