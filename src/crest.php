@@ -531,7 +531,12 @@
 					$path = __DIR__ . '/logs/';
 				}
 				$path .= date("Y-m-d/H") . '/';
-				@mkdir($path, 0775, true);
+
+				if (!file_exists($path))
+				{
+					@mkdir($path, 0775, true);
+				}
+
 				$path .= time() . '_' . $type . '_' . rand(1, 9999999) . 'log';
 				if(!defined("C_REST_LOG_TYPE_DUMP") || C_REST_LOG_TYPE_DUMP !== true)
 				{
