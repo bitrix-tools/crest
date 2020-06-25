@@ -540,7 +540,15 @@
 				$path .= time() . '_' . $type . '_' . rand(1, 9999999) . 'log';
 				if(!defined("C_REST_LOG_TYPE_DUMP") || C_REST_LOG_TYPE_DUMP !== true)
 				{
-					$return = file_put_contents($path . '.json', static::wrapData($arData));
+					$jsonLog = static::wrapData($arData);
+					if ($jsonLog === false)
+					{
+						$return = file_put_contents($path . '_backup.txt', var_export($arData, true));
+					}
+					else
+					{
+						$return = file_put_contents($path . '.json', $jsonLog);
+					}
 				}
 				else
 				{
