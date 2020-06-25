@@ -178,12 +178,33 @@
 				}
 				catch(Exception $e)
 				{
+					static::setLog(
+						[
+							'message' => $e->getMessage(),
+							'code' => $e->getCode(),
+							'trace' => $e->getTrace(),
+							'params' => $arParams
+						],
+						'exceptionCurl'
+					);
+
 					return [
-						'error'             => 'exception',
-						'error_information' => $e -> getMessage(),
+						'error' => 'exception',
+						'error_exception_code' => $e->getCode(),
+						'error_information' => $e->getMessage(),
 					];
 				}
 			}
+			else
+			{
+				static::setLog(
+					[
+						'params' => $arParams
+					],
+					'emptySetting'
+				);
+			}
+
 			return [
 				'error'             => 'no_install_app',
 				'error_information' => 'error install app, pls install local application '
