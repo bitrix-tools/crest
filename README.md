@@ -2,16 +2,17 @@
 [English](#contenten) | [Русский](#contentru)
 
 
+<div id="contenten"></div>
 @bitrix/crest — small PHPSDK used for Bitrix24 REST API for webhooks, local or public applications.
 
-<h2 id="contenten">Contents</h2>
+# Contents
 1. [Description](#description)
 2. [Calling using inbound webhook](#usingwebhook)
 3. [Calling from local application](#localapp)
 4. [Calling from public application](#publicapp)
 
 
-<h2 id="description">Description</h2>
+## <div id="description"></div>Description
 
 <ul>
 <li>Provided examples use cURL module to run REST requests. You need to learn how to enable cURL module on your server.
@@ -26,7 +27,7 @@
 define('C_REST_CURRENT_ENCODING','windows-1251');
 ```
 
-<h2 id="usingwebhook">Calling REST using inbound webhook</h2>
+## <div id="usingwebhook"></div>Calling REST using inbound webhook
 
 Indicate webhook URL in define C_REST_WEB_HOOK_URL inside the settings.php file:
 
@@ -58,7 +59,7 @@ echo '</PRE>';
 Indicate example URL in the browser address bar https://example.com/index.php to see the example results.
 
 
-<h2 id="localapp">Calling REST from local application</h2>
+## <div id="localapp"></div>Calling REST from local application
 
 Insert example text into the index.php file:
 
@@ -88,7 +89,7 @@ Take these values from the local app details form.
 In the list of local applications, click on your local app and select “Reinstall”. It’s required for install.php to operate correctly after you have indicated correct values C_REST_CLIENT_ID and C_REST_CLIENT_SECRET.
 After installation is complete, you will see example results. When the example demonstrates widget embedding into other Bitrix24 tools, switch to these tools.
 
-<h2 id="publicapp">Calling REST from public application</h2>
+## <div id="publicapp"></div>Calling REST from public application
 
 Insert example text into the index.php file:
 
@@ -118,17 +119,18 @@ Select and indicate your application URL https://example.com/index.php and insta
 <hr>
 <br>
 
+<div id="contentru"></div>
 @bitrix/crest — небольшой PHPSDK для использования REST API Битрикс24 в локальных, 
 тиражных приложениях или через вебхуки
 
-<h2 id="contentru">Содержание</h2>
+# Содержание
 1. [Описание](#introduction)
 2. [Вызов при помощи входящего вебхука](#webhook)
 3. [Вызов из локального приложения](#local)
 4. [Вызов из тиражного приложения](#public)
 
 
-<h2 id="introduction">Описание</h2>
+## <div id="introduction"></div>Описание
 
 <ul>
 <li>Примеры используют модуль cURL для выполнения REST-запросов. Узнайте, как включить модуль cURL на своем сервере.
@@ -143,7 +145,7 @@ Select and indicate your application URL https://example.com/index.php and insta
 define('C_REST_CURRENT_ENCODING','windows-1251');
 ```
 
-<h2 id="webhook">Вызов REST с использованием входящего вебхука</h2>
+## <div id="webhook"></div>Вызов REST с использованием входящего вебхука
 
 Укажите URL вебхука в define C_REST_WEB_HOOK_URL в файле settings.php:
 
@@ -175,7 +177,7 @@ echo '</PRE>';
 Укажите URL к примеру в адресной строке браузера https://example.com/index.php, чтобы увидеть результат работы примера.
 
 
-<h2 id="local">Вызов REST из локального приложения</h2>
+## <div id="local"></div>Вызов REST из локального приложения
 
 Вставьте текст примера в файл index.php:
 
@@ -205,7 +207,7 @@ echo '</PRE>';
 После установки вы увидите результат работы примера. Если пример демонстрирует встраивание виджетов в другие инструменты Битрикс24, необходимо перейти в эти инструменты.
 
 
-<h2 id="public">Вызов REST из тиражного приложения</h2>
+## <div id="public"></div>Вызов REST из тиражного приложения
 
 Вставьте текст примера в файл index.php
 
