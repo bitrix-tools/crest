@@ -1,14 +1,14 @@
 # @bitrix/crest 
-[English](#content_en) | [Русский](#content_ru)
+[English](#contenten) | [Русский](#contentru)
 
 
 @bitrix/crest — small PHPSDK used for Bitrix24 REST API for webhooks, local or public applications.
 
-<h2 id="content_en">Contents</h2>
+<h2 id="contenten">Contents</h2>
 1. [Description](#description)
-2. [Calling using inbound webhook](#using_webhook)
-3. [Calling from local application](#local_app)
-4. [Calling from public application](#public_app)
+2. [Calling using inbound webhook](#usingwebhook)
+3. [Calling from local application](#localapp)
+4. [Calling from public application](#publicapp)
 
 
 <h2 id="description">Description</h2>
@@ -26,7 +26,7 @@
 define('C_REST_CURRENT_ENCODING','windows-1251');
 ```
 
-<h2 id="using_webhook">Calling REST using inbound webhook</h2>
+<h2 id="usingwebhook">Calling REST using inbound webhook</h2>
 
 Indicate webhook URL in define C_REST_WEB_HOOK_URL inside the settings.php file:
 
@@ -58,7 +58,7 @@ echo '</PRE>';
 Indicate example URL in the browser address bar https://example.com/index.php to see the example results.
 
 
-<h2 id="local_app">Calling REST from local application</h2>
+<h2 id="localapp">Calling REST from local application</h2>
 
 Insert example text into the index.php file:
 
@@ -88,7 +88,7 @@ Take these values from the local app details form.
 In the list of local applications, click on your local app and select “Reinstall”. It’s required for install.php to operate correctly after you have indicated correct values C_REST_CLIENT_ID and C_REST_CLIENT_SECRET.
 After installation is complete, you will see example results. When the example demonstrates widget embedding into other Bitrix24 tools, switch to these tools.
 
-<h2 id="public_app">Calling REST from public application</h2>
+<h2 id="publicapp">Calling REST from public application</h2>
 
 Insert example text into the index.php file:
 
@@ -121,7 +121,7 @@ Select and indicate your application URL https://example.com/index.php and insta
 @bitrix/crest — небольшой PHPSDK для использования REST API Битрикс24 в локальных, 
 тиражных приложениях или через вебхуки
 
-<h2 id="content_ru">Содержание</h2>
+<h2 id="contentru">Содержание</h2>
 1. [Описание](#introduction)
 2. [Вызов при помощи входящего вебхука](#webhook)
 3. [Вызов из локального приложения](#local)
