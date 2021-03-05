@@ -1,8 +1,10 @@
 <?php
 	require_once (__DIR__.'/settings.php');
-
+	if (C_REST_USE_SESSIONS === true)
+	    session_start();
+	
 	/**
-	 *  @version 1.36
+	 *  @version 1.37
 	 *  define:
 	 *      C_REST_WEB_HOOK_URL = 'https://rest-api.bitrix24.com/rest/1/doutwqkjxgc3mgc1/'  //url on creat Webhook
 	 *      or
@@ -18,7 +20,7 @@
 
 	class CRest
 	{
-		const VERSION = '1.36';
+		const VERSION = '1.37';
 		const BATCH_COUNT    = 50;//count batch 1 query
 		const TYPE_TRANSPORT = 'json';// json or xml
 
@@ -407,18 +409,26 @@
 		protected static function getSettingData()
 		{
 			$return = [];
-			if(file_exists(__DIR__ . '/settings.json'))
+
+			if (!empty($_SESSION['CRestSettings']) && C_REST_USE_SESSIONS === true) {
+                $return = static::expandData($_SESSION['CRestSettings']);
+                $skipSettingsFile = true;
+            }
+
+			if(file_exists(__DIR__ . '/settings.json') && !$skipSettingsFile)
 			{
 				$return = static::expandData(file_get_contents(__DIR__ . '/settings.json'));
-				if(defined("C_REST_CLIENT_ID") && !empty(C_REST_CLIENT_ID))
-				{
-					$return['C_REST_CLIENT_ID'] = C_REST_CLIENT_ID;
-				}
-				if(defined("C_REST_CLIENT_SECRET") && !empty(C_REST_CLIENT_SECRET))
-				{
-					$return['C_REST_CLIENT_SECRET'] = C_REST_CLIENT_SECRET;
-				}
 			}
+
+			if (!empty($return))
+			{
+                if(defined("C_REST_CLIENT_ID") && !empty(C_REST_CLIENT_ID))
+                    $return['C_REST_CLIENT_ID'] = C_REST_CLIENT_ID;
+
+                if(defined("C_REST_CLIENT_SECRET") && !empty(C_REST_CLIENT_SECRET))
+                    $return['C_REST_CLIENT_SECRET'] = C_REST_CLIENT_SECRET;
+
+            }
 			return $return;
 		}
 
@@ -508,7 +518,12 @@
 
 		protected static function setSettingData($arSettings)
 		{
-			return  (boolean)file_put_contents(__DIR__ . '/settings.json', static::wrapData($arSettings));
+			if (C_REST_USE_SESSIONS === true) {
+		        $_SESSION['CRestSettings'] = static::wrapData($arSettings);
+		        return ($_SESSION['CRestSettings'] == static::wrapData($arSettings));
+            } else {
+                return  (boolean)file_put_contents(__DIR__ . '/settings.json', static::wrapData($arSettings));
+            }
 		}
 
 		/**
