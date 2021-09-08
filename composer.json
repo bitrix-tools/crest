@@ -3,7 +3,7 @@
     "description": "",
     "version": "1.0",
     "autoload": {
-        "classmap": ["src"],
+        "classmap": ["src/crest.php"],
         "files": ["src/settings.php"]
     }
 }
