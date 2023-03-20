@@ -9,3 +9,4 @@
 //define('C_REST_LOG_TYPE_DUMP',true); //logs save var_export for viewing convenience
 //define('C_REST_BLOCK_LOG',true);//turn off default logs
 //define('C_REST_LOGS_DIR', __DIR__ .'/logs/'); //directory path to save the log
+//define('C_REST_USE_SESSIONS', true); // Save settings to sessions instead of the settings.json file
